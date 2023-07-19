@@ -15,6 +15,7 @@ type Filter struct {
 	LocatFilt []string
 	NoResult  string
 	Boul      bool
+	Artboul   bool
 }
 
 func HandleFilter(w http.ResponseWriter, r *http.Request) {

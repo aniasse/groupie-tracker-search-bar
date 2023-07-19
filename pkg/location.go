@@ -32,6 +32,8 @@ type LocationInfo struct {
 	locat      []string
 	Artists    []Artist
 	LocatFilt  []string
+	Boul       bool
+	Artboul    bool
 }
 
 var NewLocalisation Localisation
@@ -85,55 +87,9 @@ func HandleLocationDetail(w http.ResponseWriter, r *http.Request) {
 		Error404Handler(w, r)
 		return
 	} else {
-
-		relation := GetRelationData("https://groupietrackers.herokuapp.com/api/relation")
-
-		var (
-			datlocation [][]string
-			tab         []string
-			IdLoc       []int
-		)
-
-		for _, v := range relation.Relat {
-			if v.IRdatloc[one_location] != nil {
-				tab = v.IRdatloc[one_location]
-				datlocation = append(datlocation, tab)
-				IdLoc = append(IdLoc, v.IRid)
-			}
-		}
-		artists := GetArtistData("https://groupietrackers.herokuapp.com/api/artists")
-		ArtistLoc := []Artist{}
-
-		for _, id := range IdLoc {
-			ArtistLoc = append(ArtistLoc, artists[id-1])
-		}
-
-		stockname := []string{}
-		stockimg := []string{}
-
-		for _, v := range ArtistLoc {
-			stockname = append(stockname, v.Aname)
-			stockimg = append(stockimg, v.AImg)
-		}
-		MyLocation := []string{}
-		for _, v := range NewLocalisation.Local {
-			if v != one_location {
-				MyLocation = append(MyLocation, v)
-			}
-		}
-		NewLocationInfo := LocationInfo{
-			Loc:        one_location,
-			Artistimg:  stockimg,
-			Artistname: stockname,
-			Date:       datlocation,
-			GlobLoc:    MyLocation,
-			locat:      NewLocalisation.Local,
-			Artists:    GetArtistData("https://groupietrackers.herokuapp.com/api/artists"),
-			LocatFilt:  TabLoc(GetLocationData("https://groupietrackers.herokuapp.com/api/locations")),
-		}
-
+		MyLocationInfo := ResultLocation(one_location)
 		temp := template.Must(template.ParseFiles("templates/location_detail.html", "templates/navbar.html"))
-		err := temp.Execute(w, NewLocationInfo)
+		err := temp.Execute(w, MyLocationInfo)
 		if err != nil {
 			fmt.Println("Erreur lors de l'execution du template", err)
 		}
@@ -187,4 +143,54 @@ func CheckURL(tab []string, str string) bool {
 	}
 
 	return false
+}
+
+func ResultLocation(loc string) LocationInfo {
+
+	relation := GetRelationData("https://groupietrackers.herokuapp.com/api/relation")
+
+	var (
+		datlocation [][]string
+		tab         []string
+		IdLoc       []int
+	)
+
+	for _, v := range relation.Relat {
+		if v.IRdatloc[loc] != nil {
+			tab = v.IRdatloc[loc]
+			datlocation = append(datlocation, tab)
+			IdLoc = append(IdLoc, v.IRid)
+		}
+	}
+	artists := GetArtistData("https://groupietrackers.herokuapp.com/api/artists")
+	ArtistLoc := []Artist{}
+
+	for _, id := range IdLoc {
+		ArtistLoc = append(ArtistLoc, artists[id-1])
+	}
+
+	stockname := []string{}
+	stockimg := []string{}
+
+	for _, v := range ArtistLoc {
+		stockname = append(stockname, v.Aname)
+		stockimg = append(stockimg, v.AImg)
+	}
+	MyLocation := []string{}
+	for _, v := range NewLocalisation.Local {
+		if v != loc {
+			MyLocation = append(MyLocation, v)
+		}
+	}
+	NewLocationInfo := LocationInfo{
+		Loc:        loc,
+		Artistimg:  stockimg,
+		Artistname: stockname,
+		Date:       datlocation,
+		GlobLoc:    MyLocation,
+		locat:      NewLocalisation.Local,
+		Artists:    GetArtistData("https://groupietrackers.herokuapp.com/api/artists"),
+		LocatFilt:  TabLoc(GetLocationData("https://groupietrackers.herokuapp.com/api/locations")),
+	}
+	return NewLocationInfo
 }

@@ -14,55 +14,50 @@ func HandleSearch(w http.ResponseWriter, r *http.Request) {
 	Artsearch := []Artist{}
 
 	Artist := GetArtistData("https://groupietrackers.herokuapp.com/api/artists")
-	relation := GetRelationData("https://groupietrackers.herokuapp.com/api/relation")
 	tabId := []int{}
-	ind := 0
+	tabloc := TabLoc(GetLocationData("https://groupietrackers.herokuapp.com/api/locations"))
+	temp := template.Must(template.ParseFiles("templates/resultsearch.html", "templates/navbar.html", "templates/form.html"))
+	var err error
+	if !CheckURL(tabloc, search) {
+		MyResult := ResultLocation(search)
+		err = temp.Execute(w, MyResult)
+	} else {
 
-	for i := ind; i < len(Artist); i++ {
-		for i = ind; i < len(relation.Relat); i++ {
-			if search == Artist[i].Aname {
-				tabId = append(tabId, Artist[i].Aid)
-			} else if search == strconv.Itoa(Artist[i].Acread) {
-				tabId = append(tabId, Artist[i].Aid)
-			} else if search == Artist[i].Afalbum {
-				tabId = append(tabId, Artist[i].Aid)
+		for _, Art := range Artist {
+
+			if search == Art.Aname {
+				tabId = append(tabId, Art.Aid)
+			} else if search == strconv.Itoa(Art.Acread) {
+				tabId = append(tabId, Art.Aid)
+			} else if search == Art.Afalbum {
+				tabId = append(tabId, Art.Aid)
 			} else {
-				for _, v := range Artist[i].Amember {
+				for _, v := range Art.Amember {
 					if v == search {
-						tabId = append(tabId, Artist[i].Aid)
-					}
-				}
-				for loc := range relation.Relat[i].IRdatloc {
-					if loc == search {
-						if loc == search {
-							tabId = append(tabId, relation.Relat[i].IRid)
-						}
+						tabId = append(tabId, Art.Aid)
 					}
 				}
 			}
 		}
-		ind++
-	}
-
-	for _, id := range tabId {
-		Artsearch = append(Artsearch, Artist[id-1])
-	}
-
-	temp := template.Must(template.ParseFiles("templates/resultsearch.html", "templates/navbar.html", "templates/form.html"))
-	var err error
-	if len(Artsearch) == 0 {
-		NoResultSearch := Filter{
-			Boul:      true,
-			NoResult:  "NO RESULTS FOR THE INFORMATION ENTERED",
-			LocatFilt: TabLoc(GetLocationData("https://groupietrackers.herokuapp.com/api/locations")),
+		for _, id := range tabId {
+			Artsearch = append(Artsearch, Artist[id-1])
 		}
-		err = temp.Execute(w, NoResultSearch)
-	} else {
-		ResultSearch := Filter{
-			Artists:   Artsearch,
-			LocatFilt: TabLoc(GetLocationData("https://groupietrackers.herokuapp.com/api/locations")),
+
+		if len(Artsearch) == 0 {
+			NoResultSearch := Filter{
+				Boul:      true,
+				NoResult:  "NO RESULTS FOR THE INFORMATION ENTERED",
+				LocatFilt: tabloc,
+			}
+			err = temp.Execute(w, NoResultSearch)
+		} else {
+			ResultSearch := Filter{
+				Artboul:   true,
+				Artists:   Artsearch,
+				LocatFilt: tabloc,
+			}
+			err = temp.Execute(w, ResultSearch)
 		}
-		err = temp.Execute(w, ResultSearch)
 	}
 
 	if err != nil {
