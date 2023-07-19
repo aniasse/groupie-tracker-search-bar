@@ -1,0 +1,35 @@
+{{define "navbar"}}
+    <nav>
+        <ul>
+            <div class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/artists">Artists</a></li>
+                <li><a href="/locations">Locations</a></li>
+                <li><a href="/dates">Dates</a></li>
+            </div> 
+            <form class="search-bar" action="/search" method="post">
+                <div class="search">
+                    <div class="icon"></div>
+                    <div class="input">
+                        <input list="search" name="search" placeholder="search" id="mysearch"/>
+                        <datalist id="search">
+                            {{range .Artists}}
+                            <option value="{{.Aname}}">{{.Aname}}---Band Name
+                                {{range .Amember}}
+                            <option value="{{.}}">{{.}}---Member
+                                {{end}}
+                            <option value="{{.Afalbum}}">{{.Afalbum}}---First Album
+                            <option value="{{.Acread}}">{{.Acread}}---Creation Date
+                            {{end}}    
+                            {{range .LocatFilt}}
+                            <option value="{{.}}"> {{.}}---Location
+                            {{end}}
+                        </datalist>
+                    </div>
+                    <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+                </div>  
+            </form> 
+            {{template "ExtraItem"}}
+        </ul>
+    </nav>
+{{end}}

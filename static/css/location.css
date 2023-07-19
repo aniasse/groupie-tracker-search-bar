@@ -1,0 +1,583 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+    color:rgb(230, 72, 9) ;
+}
+
+/* Styles pour la navigation */
+.fixe-nav{
+    width: 100%;
+    margin-left: -15px;
+}
+nav {
+    background-color: #313030;
+    padding: 10px;
+    top: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color:rgb(230, 72, 9);
+    color: white;
+    border-radius: 12px;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 50px;
+}
+/* style Artists page*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: cursive;
+    margin-top: 50px;
+}
+.container a{
+    text-decoration: none;
+    color: #000;
+}
+.artist-list-det{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: cursive;
+}
+.location-item {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.location-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.location-item:hover{
+    background-color: rgb(195, 74, 14);
+    color: #fff;
+}
+.artist-item {
+    width: 350px;
+    margin: 20px;
+    text-align: center;
+}
+
+ .cicle-image {
+    border: #efe7e7;
+    border-width: 2px;
+ }
+  .artist-item a {
+    display: block;
+    text-decoration: none;
+    color: rgb(230, 72, 9);
+    transition: all 0.3s ease;
+}
+
+.artist-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #f2f2f2;
+}
+
+.artist-item h3 {
+    margin: 0;
+}
+
+.artist-item a:hover {
+    /* transform: scale(1.1); */
+    text-decoration: underline;
+}
+
+
+.artist-details {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    padding: 20px;
+}
+
+.artist-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50%; 
+    overflow: hidden;
+    border: 2px solid #f2f2f2;
+}
+
+.artist-name {
+    display: block;
+    font-size: 24px;
+    color: rgb(230, 72, 9);
+    text-align: center;
+}
+
+.artist-members {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.artist-creation-date,
+.artist-first-album {
+    font-size: 20px;
+    color: #c6bdbd;
+    margin-bottom: 10px;
+}
+
+.artist-locations {
+    width: 75%;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+    text-align: center;
+    
+}
+
+.artist-locations th {
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #313030;
+}
+
+.artist-locations td {
+    
+    color: #efe7e7;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.artist-concert-date {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styles spécifiques pour le tableau des dates de localisation */
+.artist-locations .location {
+    width: 20%;
+}
+
+.artist-locations .date {
+    width: 20%;
+}
+
+.artist-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.artist-info {
+    margin-top: 50px;
+    flex: 1;
+}
+
+.artist-list {
+    flex: 0 0 350px;
+    padding-left: 20px;
+    overflow-y: auto;
+    max-height: 1000px; 
+    padding: 20px;
+    box-shadow: 0 2px 10px rgb(195, 74, 14);
+    background: linear-gradient(to bottom, #c64408, #ff6a00); 
+    margin-top: 20px;
+}
+
+.artist-item-inline a{
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+}
+
+.artist-item-inline img{
+    margin-left: 27%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    border: 2px solid #f2f2f2;
+}
+
+/*Style pour la page location details*/
+
+
+.location-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    color: #e4dcdc;
+    margin-top: 30px;
+  }
+
+  .location-info {
+    flex: 1;
+    margin-right: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    max-height: 1000px;
+}
+
+.location-list {
+    overflow-y: auto;
+    max-height: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-self: flex-start;
+    text-align: center;
+}
+
+.location-list a{
+    text-decoration: none;
+    color: #fff;
+}
+.location-item-inline {
+    margin: 5px;
+    padding: 20px;
+    background-color: #c64408;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.location-item-inline:hover {
+    transform: scale(1.1);
+    background-color: #ff6a00;
+}
+  
+.location-item-inline a {
+    text-decoration: none;
+    color: white;
+}
+ 
+  
+/*style pour la page date*/
+
+.date-list, .date-list-item {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    gap: 20px;
+    font-size: 24px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    padding: 10px;
+    text-align: center;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+    margin-top: 110px;
+}
+.date-list:hover, .date-list-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.date-list a,  .date-list-item a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.date-list div, .date-list-item div {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+}
+/*Style pour la page date details*/
+.date-info {
+    flex: 1;
+    text-align: center;
+}
+.date-detail {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e4dcdc;
+}
+
+.container .no-result{
+    margin-top: 100px;
+    text-align: center;
+    font-size: xx-large;
+    color: rgb(230, 72, 9);
+}
+
+.date-item{
+    background-color: #c6bdbd;
+    color: #000;
+}
+.date-item:hover {
+    background-color:  rgb(230, 72, 9);
+    color: #e4dcdc;
+}
+
+
+
+/* Les media query */
+
+@media (max-width: 1000px){
+    .date-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .location-list{
+        display: none;
+    }
+    .artist-item{
+        width: 98%;
+        justify-items: center;
+        text-align: center;
+    }
+    .location-info h2 {
+        font-size: large;
+    }
+    .location-info h3{
+        font-size: large;
+    }
+    nav ul li a {
+        font-size: 10px;
+    }
+    .date-list-item{
+        display: none;
+    }
+    .fixe-nav{
+        width: 100%;
+        position: fixed;
+        margin-left: -10px;
+        margin-top: -10px;
+    }
+    .container{
+        overflow-y: auto;
+    }
+    .title h1{
+        color: white;
+        background-color:  rgb(75, 73, 73);
+    }
+    .date-list{
+        margin-top: 150px;
+        overflow-y: auto;
+    }
+    .body{
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-list{
+        display: none;
+    }
+    .date-list {
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
+    .location-item {
+        flex: 0 0 calc(50% - 20px);
+    }
+    .artist-details {
+        flex-direction: column;
+    }
+
+    .artist-info {
+        order: 1;
+    }
+
+    .artist-list {
+        display:none
+    }
+
+    .artist-item-inline {
+        display: inline-block;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .artist-item-inline img{
+        margin-left: 0px;
+    }
+    .artist-locations {
+        width: 100%;
+    }
+    .artist-item{
+        width: 98%;
+        justify-items: center;
+        text-align: center;
+    }  
+    .location-info h2{
+        font-size: small;
+    } 
+    .location-info h3{
+        font-size: large;
+    }
+    nav ul li a {
+        font-size: 10px;
+    }
+    .date-list-item{
+        display: none;
+    }
+    .fixe-nav{
+        width: 100%;
+        position: fixed;
+        margin-left: -10px;
+        margin-top: -10px;
+    }
+    .container{
+        overflow-y: auto;
+    }
+    .title h1{
+        color: white;
+        background-color:  rgb(75, 73, 73);
+    }
+    .date-list{
+        margin-top: 150px;
+        overflow-y: auto;
+    }
+    .body{
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-item {
+        flex: 0 0 calc(100% - 20px);
+    }
+    .date-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .artist-item img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+    .location-list{
+        display: none;
+    }
+    .artist-item{
+        width: 98%;
+        justify-items: center;
+        text-align: center;
+    }
+    .location-info h2{
+        font-size: small;
+    }
+    .location-info h3{
+        font-size: large;
+    }
+    nav ul li a {
+        font-size: 10px;
+    }
+    .date-list-item{
+        display: none;
+    }
+    .fixe-nav{
+        width: 100%;
+        position: fixed;
+        margin-left: -10px;
+        margin-top: -10px;
+    }
+    .container{
+        overflow-y: auto;
+    }
+    .title h1{
+        color: white;
+        background-color:  rgb(75, 73, 73);
+    }
+    .date-list{
+        margin-top: 150px;
+        overflow-y: auto;
+    }
+    .body{
+        overflow-y: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    nav ul li a {
+        font-size: 10px;
+    }
+    .artist-item img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+    .artist-item{
+        width: 98%;
+        justify-items: center;
+        text-align: center;
+    }
+    .location-list{
+        display: none;
+    }
+    .location-info h2{
+        font-size: large;
+    }
+    .location-info h3{
+        font-size: large;
+    }
+    .date-list-item{
+        display: none;
+    }
+    .fixe-nav{
+        width: 100%;
+        position: fixed;
+        margin-left: -10px;
+        margin-top: -10px;
+    }
+    .container{
+        overflow-y: auto;
+    }
+    .title h1{
+        color: white;
+        background-color:  rgb(75, 73, 73);
+    }
+    .date-list{
+        margin-top: 150px;
+        overflow-y: auto;
+    }
+    .body{
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,46 @@
+{{define "form"}}
+<div id="filter">
+    <h2 class="name-filter">Filter by</h2>
+<form action="/filter" method="POST">
+    <div class="creation-filter">
+        <input type="checkbox" name="creationdate" onchange="toggleFields()">
+        <label for="creationdate">Creation Date</label>
+        <input type="number" name="datdebut" placeholder="From" min="1962" max="2015" value="1962" disabled>
+        <input type="number" name="datfin" placeholder="To" min="1962" max="2015" value="2015" disabled required>
+    </div>
+    <div class="first-album">
+        <input type="checkbox" name="firstalbum" onchange="toggleFields()">
+        <label for="firstalbum">First album</label>
+        <input type="date" name="debutalbum"  min="1963-07-31" max="2018-11-15" value="1963-07-31"  disabled>
+        <input type="date" name="finalalbum" min="1963-07-31"  max="2018-11-15" value="2018-11-15" disabled required>
+    </div>
+    <div class="members">
+        <input type="checkbox" name="members" onchange="toggleFields()">
+        <label for="members">Member</label>
+            <div class="range-slider">
+            <span class="range-selected"></span><br>
+            </div>
+            <div class="range-input">
+                <input type="range" id="member1" class="slider1" name="member1" min="1" max="8" value="1" step="1" disabled>
+                <input type="range" id="member2" class="slider2" name="member2" min="1" max="8" value="8" step="1" disabled>  
+            </div>
+            <div class="range-price">
+                <label for="member1">
+                  <span id="valeurAffichee1" data-value="1">1</span>
+                </label>
+                <label for="member2">
+                  <span id="valeurAffichee2" data-value="8">8</span>
+                </label>
+            </div> 
+      </div> 
+    <div class="locations">
+        <input type="checkbox" name="location" onchange="toggleFields()">
+        <label for="location">Concert location</label>
+        <select name="loc" disabled>
+        {{range .LocatFilt}}<option value="{{.}}"> {{.}}</option>{{end}}
+        </select>
+    </div>
+    <input type="submit" name="enter" value="Filter" class="filter-btn">
+</form>
+</div>
+{{end}}

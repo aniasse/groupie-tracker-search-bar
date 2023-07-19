@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/location.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/images/icon.jpeg">
+    <script src="/static/script/date.js" defer></script>
+    <script src="/static/script/search.js" defer></script>
+    <title>Date Infos</title>
+</head>
+<body>
+    {{define "ExtraItem"}} {{end}}
+    {{template "navbar" .}}
+    <div class="date-detail">
+        <h2>Date: {{.Even}}</h2>
+        <div class="date-info">
+            <div class="artist-details">
+        {{$images := index .Artimg}}
+        {{$names := index .Artname}}
+        {{$location := index .Loc}}
+
+        {{range $index, $val := $images}}
+            {{$name := index $names $index}}
+            {{$loc := index $location $index}}
+                <div class="artist-item">
+                    <img src="{{$val}}" alt="">
+                    <h3>{{$name}}</h3> <br>
+                    <h3>Location : {{$loc}}</h3>
+                </div>
+        {{end}}
+            </div>
+        </div>
+    </div>
+    
+    <div class="date-list-item">
+        
+        {{range $key, $val := .GlobDat}}
+            <label for="select-{{$key}}">{{$key}}</label>
+            <select class="select-option" id="select-{{$key}}">
+                <option value="">please choose a date</option>
+                {{range $val}} <option value="/date-infos?Dat={{.}}"> {{.}} </option> {{end}}
+            </select>
+        {{end}}
+    </div>
+</body>
+</html>

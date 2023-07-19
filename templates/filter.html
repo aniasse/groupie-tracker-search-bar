@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/location.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/script/form.js" defer></script>
+    <script src="/static/script/search.js" defer></script>
+    <title>Result-Filter</title>
+</head>
+<body>
+    <div class="fixe-nav">
+        {{define "ExtraItem"}} 
+            <img src="/static/images/filtre.jpg" alt=""  class="filter-icon" onclick="toggleDiv()" >
+        {{end}}
+        {{template "navbar" .}}
+        {{template "form" .}}
+    </div>
+    <div class="container">  
+    {{if .Boul}} <h1 class="no-result">{{.NoResult}} </h1>
+    {{else}}  
+        {{range .Artists}}
+        <div class="artist-item">
+           <a href="/artist-details?Id={{.Aid}}">
+               <img class="circle-image" src="{{.AImg}}" alt="">
+               <h3>{{.Aname}}</h3>
+           </a> 
+        </div>   
+        {{end}}
+    {{end}}
+    </div>
+</body>
+</html>

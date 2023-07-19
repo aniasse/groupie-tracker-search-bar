@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie-Tracker-Filter</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/images/icon.jpeg">
+    <script src="/static/script/form.js" defer></script>
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome to Groupie-Tracker</h1>
+    </header> -->
+    {{define "ExtraItem"}} 
+        <img src="/static/images/filtre.jpg" alt=""  class="filter-icon" onclick="toggleDiv()" >
+    {{end}}
+    {{template "navbar" .}}
+    {{template "form" .}} 
+    <div class="content">
+        <p>Discover your favorite artists with Groupie Trackers: <br>Passion just a click away!</p>
+        <img src="/static/images/pic.png" class="image">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/location.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/images/icon.jpeg">
+    <title>Artist-details</title>
+    <script src="/static/script/form.js" defer></script>
+    <script src="/static/script/search.js" defer></script>
+</head>
+<body>
+    <div class="fixe-nav">
+        {{define "ExtraItem"}} 
+            <img src="/static/images/filtre.jpg" alt=""  class="filter-icon" onclick="toggleDiv()" >
+        {{end}}
+        {{template "navbar" .}}
+        {{template "form" .}}
+    </div>
+    <div class="artist-details">
+        <div class="artist-info">
+            <img src="{{.Img}}" alt="" class="artist-image">
+            <h3 class="artist-name">{{.Name}}</h3>
+            <h3>Members</h3>
+            <p class="artist-members">
+                {{range .Member}}
+                    {{.}} <br>
+                {{end}}
+            </p>
+            <h2 class="artist-creation-date">Creation Date {{.CreatDat}}</h2>
+            <h2 class="artist-first-album">First Album {{.FirstAlbum}}</h2>
+        
+            <h3 class="artist-locations-title">Location Dates</h3>
+            <table class="artist-locations">
+                <thead>
+                    <tr>
+                        <th class="location">Location</th>
+                        <th class="date">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range $key, $val := .DatLoc}}
+                        <tr>
+                            <td class="location"><pre class="">{{$key}}</pre> </td>
+                            <td class="date">{{range $val}} {{.}} <br> {{end}}</td>
+                        </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+        <div class="artist-list">
+            {{range .Artists}}
+                <div class="artist-item-inline">
+                    <a href="/artist-details?Id={{.Aid}}">
+                        <img class="circle-image" src="{{.AImg}}" alt="">
+                        <h3>{{.Aname}}</h3>
+                    </a>
+                </div>
+            {{end}}
+        </div>
+    </div>
+</body>
+</html>

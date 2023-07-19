@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/location.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/script/date.js" defer></script>
+    <script src="/static/script/search.js" defer></script>
+    <title>Date</title>
+</head>
+<body>
+    <div class="fixe-nav">
+        {{define "ExtraItem"}} {{end}}
+        {{template "navbar" .}}
+        <div class="title">
+            <h1>DATES</h1>
+        </div> 
+    </div>
+    <div class="date-list">
+        {{range $key, $val := .Date}}
+            <label for="select-{{$key}}">{{$key}}</label>
+            <select class="select-option" id="select-{{$key}}">
+                <option value="">please choose a date</option>
+                {{range $val}} <option value="/date-infos?Dat={{.}}" class="option-dat"> {{.}} </option> {{end}}
+            </select>
+        {{end}}
+    </div>
+</body>
+</html>

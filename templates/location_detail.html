@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/location.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/images/icon.jpeg">
+    <title>Location-details</title>
+    <script src="/static/script/search.js" defer></script>
+</head>
+<body>
+    {{define "ExtraItem"}} {{end}}
+    {{template "navbar" .}}
+    </nav>
+    <div class="location-details">
+        <div class="location-info">
+            <h2>Location: {{.Loc}}</h2>
+            <div class="artist-details">
+                {{ $images := index .Artistimg }}
+                {{ $names := index .Artistname }}
+                {{ $dates := index .Date }}
+
+                {{ range $index, $val := $images }}
+                <div class="artist-item">
+                    <img src="{{$val}}" alt=""> 
+                    <h3>{{$name := index $names $index}} {{$name}}</h3>
+                    <h2>Concert date</h2>
+                    <h3>{{range $date := index $dates $index}} {{$date}} <br>{{end}}</h3>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="location-list">
+            {{range .GlobLoc}}
+          
+                <a href="/location-detail?Loc={{.}}" class="location-item-inline">{{.}}</a>
+          
+            {{end}}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/location.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/images/icon.jpeg">
+    <title>Location</title>
+    <script src="/static/script/search.js" defer></script>
+</head>
+<body>
+    <div class="fixe-nav">
+        {{define "ExtraItem"}}  {{end}}
+        {{template "navbar" .}}
+        <div class="title">
+            <h1>LOCATIONS</h1>
+        </div> 
+    </div>
+    <div class="container">
+        {{range $val := .Local}}
+        <a href="/location-detail?Loc={{$val}}" class="location-item">{{$val}}</a>
+        {{end}}
+    </div>
+</body>
+</html>

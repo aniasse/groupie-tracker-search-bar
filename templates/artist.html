@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/location.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/images/icon.jpeg">
+    <title>Artists</title>
+    <script src="/static/script/form.js" defer></script>
+    <script src="/static/script/search.js" defer></script>
+</head>
+<body>
+    <div class="fixe-nav">
+        {{define "ExtraItem"}} 
+        <img src="/static/images/filtre.jpg" alt=""  class="filter-icon" onclick="toggleDiv()" >
+    {{end}}
+    {{template "navbar" .}}
+    {{template "form" .}}
+        <div class="title">
+                <h1>ARTISTS</h1>
+        </div> 
+    </div>
+    <div class="container">
+        {{range .Artists}}
+        <div class="artist-item">
+            <a href="/artist-details?Id={{.Aid}}">
+               <img class="circle-image" src="{{.AImg}}" alt="">
+               <h3 class="name">{{.Aname}}</h3>
+            </a> 
+        </div>   
+        {{end}}
+    </div>
+</body>
+</html>
