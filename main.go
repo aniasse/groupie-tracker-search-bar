@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"groupie-tracker-filters/pkg"
+	"groupie-tracker-search-bar/pkg"
 	"net/http"
 )
 
