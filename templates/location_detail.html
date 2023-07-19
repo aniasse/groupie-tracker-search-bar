@@ -25,8 +25,8 @@
                 <div class="artist-item">
                     <img src="{{$val}}" alt=""> 
                     <h3>{{$name := index $names $index}} {{$name}}</h3>
-                    <h2>Concert date</h2>
-                    <h3>{{range $date := index $dates $index}} {{$date}} <br>{{end}}</h3>
+                    <h3>Concert date</h3>
+                    <h4>{{range $date := index $dates $index}} {{$date}} <br>{{end}}</h4>
                 </div>
                 {{ end }}
             </div>
