@@ -84,7 +84,6 @@ func HandleDAte(w http.ResponseWriter, r *http.Request) {
 	for _, v := range uniq_date {
 		split := strings.Split(v, "-")
 		stock := split[len(split)-1]
-		fmt.Println(stock)
 		if !NoRepeatLoc(year, stock) {
 			year = append(year, stock)
 		}
