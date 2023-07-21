@@ -357,6 +357,9 @@ nav ul li a:hover {
 /* Les media query */
 
 @media (max-width: 1000px){
+    nav{
+        height: 130px;
+    }
     .date-list {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -373,6 +376,10 @@ nav ul li a:hover {
     }
     .location-info h3{
         font-size: large;
+    }
+    nav ul div{
+        display: block;
+        height: 120px;
     }
     nav ul li a {
         font-size: 10px;
@@ -400,6 +407,30 @@ nav ul li a:hover {
     .body{
         overflow-y: auto;
     }
+    .menu{
+        display: block;
+        height: 120px;
+    }
+    .search{
+        margin-right: -20px;
+        height: 33px;
+        width: 33px;
+    }
+    .search .icon{
+        height: 35px;
+        width: 35px;
+    }
+    .search.active{
+        width: 160px;
+    }
+    .filter-icon{
+        float: left;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+   
 }
 
 @media (max-width: 768px) {
@@ -420,11 +451,9 @@ nav ul li a:hover {
     .artist-info {
         order: 1;
     }
-
     .artist-list {
         display:none
     }
-
     .artist-item-inline {
         display: inline-block;
         margin-right: 10px;
@@ -447,6 +476,21 @@ nav ul li a:hover {
     .location-info h3{
         font-size: large;
     }
+    .menu{
+        display: block;
+    }
+    .search{
+        margin-right: -20px;
+        height: 33px;
+        width: 33px;
+    }
+    .search .icon{
+        height: 35px;
+        width: 35px;
+    }
+    .search.active{
+        width: 160px;
+    }
     nav ul li a {
         font-size: 10px;
     }
@@ -473,6 +517,14 @@ nav ul li a:hover {
     .body{
         overflow-y: auto;
     }
+    .filter-icon{
+        float: left;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+  
 }
 
 @media (max-width: 480px) {
@@ -503,6 +555,21 @@ nav ul li a:hover {
     .location-info h3{
         font-size: large;
     }
+    .menu{
+        display: block;
+    }
+    .search{
+        margin-right: -20px;
+        height: 33px;
+        width: 33px;
+    }
+    .search .icon{
+        height: 35px;
+        width: 35px;
+    }
+    .search.active{
+        width: 160px;
+    }
     nav ul li a {
         font-size: 10px;
     }
@@ -529,12 +596,35 @@ nav ul li a:hover {
     .body{
         overflow-y: auto;
     }
+    .filter-icon{
+        float: left;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
 }
 
 @media screen and (max-width: 400px) {
 
     nav ul li a {
         font-size: 10px;
+    }
+    .menu{
+        display: block;
+    }
+    .search{
+        margin-right: -20px;
+        height: 33px;
+        width: 33px;
+    }
+    .search .icon{
+        height: 35px;
+        width: 35px;
+    }
+    .search.active{
+        width: 160px;
     }
     .artist-item img {
         width: 90px;
@@ -579,5 +669,12 @@ nav ul li a:hover {
     }
     .body{
         overflow-y: auto;
+    }
+    .filter-icon{
+        float: left;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
     }
 }

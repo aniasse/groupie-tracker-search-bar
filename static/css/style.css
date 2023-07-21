@@ -229,7 +229,7 @@ nav ul li a:hover {
 }
 .range-price input:first-of-type {
     margin-right: 15px;
-  }
+}
 
 .locations select {
     width: 75%;
@@ -247,160 +247,7 @@ nav ul li a:hover {
 .slider1, .slider2{
     cursor: pointer;
 }
-/* Media queries pour la réactivité */
 
-@media only screen and  (max-width: 400px) {
-    
-    nav ul {
-        list-style-type: none;
-    }
-    .filter-icon{
-        float: left;
-        cursor: pointer;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-    }
-    #filter{
-        height: 300px;
-        overflow-y: auto;
-    }
-    label{
-        font-size: small;
-    }
-    .filter-btn{
-        width: auto;
-        /* font-size: ; */
-        margin:auto;
-        cursor: pointer;
-    }
-    .artist-image{
-        display: block;
-        margin: auto;
-        height: 90px;
-        width: 90px;
-        border-radius: 50%;
-    }
-    .title h1{
-        font-size: x-large;
-    }
-    .artist-item h3{
-        font-size: large;
-    }
-    .artist-info h3{
-        font-size: large;
-    }
-    .artist-creation-date{
-        font-size: large;
-    }
-    .artist-first-album{
-        font-size: large;
-    }
-    .artist-locations-title{
-        font-size: large;
-    }
-    .fixe-nav{
-        position: fixed;
-    }
-    .container{
-        overflow-y: auto;
-    }
-    .body{
-        overflow-y: auto;
-    }
-}
-
-@media only screen and  (max-width: 1000px) {
-    nav ul{
-        display: flex;
-        height: auto;
-    }
-    nav ul div{
-        display: block;
-    }
-    .content {
-        margin-top: 100px;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-    }
-
-    .content p {
-        flex: 0 0 60%;
-        margin-right: 20px;
-    }
-
-    .content img {
-        flex: 0 0 10%;
-        margin-left: 20px;
-    }
-    #filter{
-        position: relative;
-        
-   }
-   .creation-filter,
-    .first-album,
-    .members,
-    .locations {
-        margin-bottom: 20px;
-    }
-
-    .creation-filter input[type="number"],
-    .first-album input[type="number"] {
-        width: 75px;
-        height: 25px;
-    }
-
-    .members input[type="range"] {
-        width: 100%;
-    }
-
-    .locations select {
-        width: 75%;
-    }
-    #filter{
-        position: absolute;
-        right: 0px;
-    }
-    .filter-btn{
-        width: auto;
-        font-size: small;
-        margin:auto;
-    }
-    .artist-image{
-        display: block;
-        margin: auto;
-        height: 90px;
-        width: 90px;
-        border-radius: 50%;
-    }
-    .title h1{
-        font-size: x-large;
-    }
-    .artist-item h3{
-        font-size: large;
-    }
-    .artist-info h3{
-        font-size: large;
-    }
-    .artist-creation-date{
-        font-size: large;
-    }
-    .artist-first-album{
-        font-size: large;
-    }
-    .artist-locations-title{
-        font-size: large;
-    }
-    .fixe-nav{
-        position: fixed;
-    }
-    .container{
-        overflow-y: auto;
-    }
-    .body{
-        overflow-y: auto;
-    }
-}
 
 /*style search bar*/
 .search{
@@ -493,4 +340,195 @@ nav ul li a:hover {
     height: 15px;
     background: #999;
     transform: rotate(315deg);
+}
+
+/* Media queries pour la réactivité */
+
+@media only screen and  (max-width: 400px) {
+    
+    nav{
+        height: 120px;
+    }
+    nav ul {
+        list-style-type: none;
+    }
+    .menu{
+        display: block;
+        height: 120px;
+    }
+    .filter-icon{
+        float: left;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+    #filter{
+        height: 300px;
+        overflow-y: auto;
+    }
+    label{
+        font-size: small;
+    }
+    .filter-btn{
+        width: auto;
+        /* font-size: ; */
+        margin:auto;
+        cursor: pointer;
+    }
+    .artist-image{
+        display: block;
+        margin: auto;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+    }
+    .title h1{
+        font-size: x-large;
+    }
+    .artist-item h3{
+        font-size: large;
+    }
+    .artist-info h3{
+        font-size: large;
+    }
+    .artist-creation-date{
+        font-size: large;
+    }
+    .artist-first-album{
+        font-size: large;
+    }
+    .artist-locations-title{
+        font-size: large;
+    }
+    .fixe-nav{
+        position: fixed;
+    }
+    .container{
+        overflow-y: auto;
+    }
+    .body{
+        overflow-y: auto;
+    }
+    .menu{
+        display: block;
+    }
+    .search{
+        margin-right: -20px;
+        height: 33px;
+        width: 33px;
+    }
+    .search .icon{
+        height: 35px;
+        width: 35px;
+    }
+    .search.active{
+        width: 160px;
+    }
+  
+}
+
+@media  screen and  (max-width: 1000px) {
+    nav{
+        height: 130px;
+    }
+    .menu{
+        display: block;
+        height: 120px;
+    }
+    .content {
+        margin-top: 140px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .content p {
+        flex: 0 0 60%;
+        margin-right: 20px;
+    }
+
+    .content img {
+        flex: 0 0 10%;
+        margin-left: 20px;
+    }
+    #filter{
+        position: relative;
+        
+   }
+   .creation-filter,
+    .first-album,
+    .members,
+    .locations {
+        margin-bottom: 20px;
+    }
+
+    .creation-filter input[type="number"],
+    .first-album input[type="number"] {
+        width: 75px;
+        height: 25px;
+    }
+
+    .members input[type="range"] {
+        width: 100%;
+    }
+
+    .locations select {
+        width: 75%;
+    }
+    #filter{
+        position: absolute;
+        right: 0px;
+    }
+    .filter-btn{
+        width: auto;
+        font-size: small;
+        margin:auto;
+    }
+    .artist-image{
+        display: block;
+        margin: auto;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+    }
+    .title h1{
+        font-size: x-large;
+    }
+    .artist-item h3{
+        font-size: large;
+    }
+    .artist-info h3{
+        font-size: large;
+    }
+    .artist-creation-date{
+        font-size: large;
+    }
+    .artist-first-album{
+        font-size: large;
+    }
+    .artist-locations-title{
+        font-size: large;
+    }
+    .fixe-nav{
+        position: fixed;
+    }
+    .container{
+        overflow-y: auto;
+    }
+    .body{
+        overflow-y: auto;
+    }
+    .search{
+        margin-right: -20px;
+        height: 33px;
+        width: 33px;
+    }
+    .search .icon{
+        height: 35px;
+        width: 35px;
+    }
+    .search.active{
+        width: 160px;
+    }
+    
 }

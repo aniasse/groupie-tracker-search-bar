@@ -38,7 +38,7 @@ function toggleFields() {
     var albumFields = document.querySelectorAll('input[name="debutalbum"], input[name="finalalbum"]');
 
     var membersCheckbox = document.querySelector('input[name="members"]');
-    var membersField = document.querySelectorAll('input[id="member1"], input[id="member2"]');
+    var membersFields = document.querySelectorAll('input[id="member1"], input[id="member2"]');
 
     var locationCheckbox = document.querySelector('input[name="location"]');
     var locationField = document.querySelector('select[name="loc"]');
@@ -60,8 +60,8 @@ function toggleFields() {
     locationField.disabled = !locationCheckbox.checked;
 
     // Basculer les champs pour members
-    for (var i = 0; i < membersField.length; i++) {
-        var field = membersField[i];
+    for (var i = 0; i < membersFields.length; i++) {
+        var field = membersFields[i];
         field.disabled = !membersCheckbox.checked;
     }
     //    membersField.disabled = !membersCheckbox.checked;
