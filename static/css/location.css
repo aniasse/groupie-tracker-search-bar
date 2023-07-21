@@ -11,23 +11,45 @@ body {
     width: 100%;
     margin-left: -15px;
 }
+.fixe-nav{
+    width: 100%;
+}
 nav {
     background-color: #313030;
     padding: 10px;
-    top: 0;
+    height: 60px;
     width: 100%;
+    position: fixed;
+    top: -1px;
+    left: 0;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: center;
+    /* justify-content: space-between; */
 }
 
 nav ul li {
     margin-right: 20px;
 }
-
+nav ul div{
+    display: flex;
+}
+.menu{
+    position: fixed;
+    display: flex;
+    left: 10px;
+}
+ nav ul img{
+    position: fixed;
+    display: flex;
+    right: 10px;
+}
+nav ul form{
+    position: fixed;
+    right: 95px;
+} 
 nav ul li a {
     font-size: 24px;
     text-decoration: none;
@@ -245,6 +267,7 @@ nav ul li a:hover {
     padding: 20px;
     color: #e4dcdc;
     margin-top: 30px;
+    width: 100%;
   }
 
   .location-info {
@@ -358,7 +381,14 @@ nav ul li a:hover {
 
 @media (max-width: 1000px){
     nav{
-        height: 130px;
+        height: 160px;
+    }
+    nav ul li {
+        margin-bottom: 10px;
+    }
+    .menu{
+        display: block;
+        height: 120px;
     }
     .date-list {
         grid-template-columns: repeat(4, 1fr);
@@ -377,13 +407,7 @@ nav ul li a:hover {
     .location-info h3{
         font-size: large;
     }
-    nav ul div{
-        display: block;
-        height: 120px;
-    }
-    nav ul li a {
-        font-size: 10px;
-    }
+    
     .date-list-item{
         display: none;
     }
@@ -417,18 +441,28 @@ nav ul li a:hover {
         width: 33px;
     }
     .search .icon{
-        height: 35px;
-        width: 35px;
+        height: 33px;
+        width: 33px;
     }
     .search.active{
         width: 160px;
     }
+    .search .input{
+        height: 33px;
+    }
+    .search .icon::before{
+    width: 9px;
+    height: 9px;
+    transform: translate(-2px, -2px);
+    }
+    .search .icon::after{
+        width: 3px;
+        height: 9px;
+        transform: translate(5px, 5px) rotate(315deg);
+    }
     .filter-icon{
-        float: left;
-        cursor: pointer;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
+        height: 33px;
+        width: 33px;
     }
    
 }
@@ -491,9 +525,9 @@ nav ul li a:hover {
     .search.active{
         width: 160px;
     }
-    nav ul li a {
+    /* nav ul li a {
         font-size: 10px;
-    }
+    } */
     .date-list-item{
         display: none;
     }
@@ -570,9 +604,9 @@ nav ul li a:hover {
     .search.active{
         width: 160px;
     }
-    nav ul li a {
+    /* nav ul li a {
         font-size: 10px;
-    }
+    } */
     .date-list-item{
         display: none;
     }
@@ -608,9 +642,9 @@ nav ul li a:hover {
 
 @media screen and (max-width: 400px) {
 
-    nav ul li a {
+    /* nav ul li a {
         font-size: 10px;
-    }
+    } */
     .menu{
         display: block;
     }

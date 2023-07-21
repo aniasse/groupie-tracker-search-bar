@@ -99,7 +99,7 @@ nav ul li a:hover {
 .content p {
     font-size: 30px; 
     text-align: center; 
-    margin-bottom: 20%;
+    margin-top: 20%;
 }
 
 .content img {
@@ -381,7 +381,35 @@ nav ul li a:hover {
         margin: auto;
         height: 90px;
         width: 90px;
-        border-radius: 50%;
+        border-radius: 50%;/* nav {
+    background-color: #313030;
+    padding: 10px;
+    top: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color:rgb(230, 72, 9);
+    color: white;
+    border-radius: 12px;
+} */
     }
     .title h1{
         font-size: x-large;
@@ -419,18 +447,24 @@ nav ul li a:hover {
         width: 33px;
     }
     .search .icon{
-        height: 35px;
-        width: 35px;
+        height: 33px;
+        width: 33px;
     }
     .search.active{
         width: 160px;
+    }
+    .search .input{
+        height: 33px;
     }
   
 }
 
 @media  screen and  (max-width: 1000px) {
     nav{
-        height: 130px;
+        height: 160px;
+    }
+    nav ul li {
+        margin-bottom: 10px;
     }
     .menu{
         display: block;
@@ -524,11 +558,28 @@ nav ul li a:hover {
         width: 33px;
     }
     .search .icon{
-        height: 35px;
-        width: 35px;
+        height: 33px;
+        width: 33px;
     }
     .search.active{
         width: 160px;
+    }
+    .search .input{
+        height: 33px;
+    }
+    .search .icon::before{
+    width: 9px;
+    height: 9px;
+    transform: translate(-2px, -2px);
+    }
+    .search .icon::after{
+        width: 3px;
+        height: 9px;
+        transform: translate(5px, 5px) rotate(315deg);
+    }
+    .filter-icon{
+        height: 33px;
+        width: 33px;
     }
     
 }
